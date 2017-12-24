@@ -259,7 +259,7 @@ footer {
     height: 100px; }
   .apontador-down {
     left: 0;
-    top: calc(100vh - 55%);
+    top: calc(100vh - 60%);
     position: absolute;
     display: flex;
     justify-content: center;
