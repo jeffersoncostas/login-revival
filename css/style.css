@@ -47,11 +47,12 @@
 .all-login {
   display: flex;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   height: 75vh; }
 
 .login-part {
-  align-self: center; }
+  align-self: center;
+  z-index: 4; }
 
 .center-title {
   display: flex;
@@ -192,7 +193,7 @@ footer {
   font-family: arial;
   display: flex;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   height: 25vh;
   position: relative; }
 
@@ -238,6 +239,71 @@ footer {
 
 .c-f-logo-margin {
   margin-top: 7px; }
+
+.clouds-content {
+  overflow-x: hidden;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+.cloud {
+  position: absolute;
+  bottom: 40%;
+  right: calc(0% - 240px); }
+
+.cloud-2 {
+  bottom: 80%; }
+
+.c-scale-s {
+  transform: scale(0.4, 0.4); }
+
+.cloud-base {
+  position: relatve;
+  border-radius: 10px;
+  width: 200px;
+  height: 60px;
+  background-color: white; }
+
+.cloud-circle {
+  border-radius: 50%;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  top: -40px; }
+
+.c-c-p1 {
+  left: -40px; }
+
+.c-c-p2 {
+  top: -90px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 150px;
+  height: 150px; }
+
+.c-c-p3 {
+  right: -40px; }
+
+.c-c-anim {
+  animation-name: cloud-moving;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  animation-duration: 15s;
+  animation-timing-function: linear; }
+
+.c-c-duration {
+  animation-duration: 25s; }
+
+.c-c-delay {
+  animation-delay: 3s; }
+
+@keyframes cloud-moving {
+  0% {
+    right: calc(0% - 240px); }
+  100% {
+    right: calc(100% + 240px); } }
 
 @media only screen and (max-width: 600px) {
   .box-login {
