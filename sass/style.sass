@@ -324,14 +324,14 @@ footer
     border-radius: 10px
     width: 200px
     height: 60px
-    background-color: white
+    background-color: $light-color
 
 .cloud-circle
     border-radius: 50%
     position: absolute
     width: 100px
     height: 100px
-    background-color: white
+    background-color: $light-color
     top: -40px
     
 .c-c-p1
@@ -356,7 +356,7 @@ footer
     animation-timing-function: linear
 
 .c-c-duration
-    animation-duration: 25s
+    animation-duration: 30s
     
 .c-c-delay
     animation-delay: 3s
@@ -370,7 +370,10 @@ footer
     
     
     
-@media only screen and (max-width: 600px)
+@media only screen and (max-width: 700px)
+    
+    .clouds-content
+        display: none
     
     .box-login
         width: 100vw
