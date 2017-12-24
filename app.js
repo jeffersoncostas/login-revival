@@ -6,8 +6,7 @@ let path = require('path');
 app.use('/css', express.static(path.join(__dirname, 'css')))
 app.use('/js', express.static(path.join(__dirname, 'js')))
 app.use('/vector', express.static(path.join(__dirname, 'vector')))
-
-app.use('/node-modules', express.static(path.join(__dirname, 'angular')))
+app.use('/node_modules', express.static(path.join(__dirname, 'angular')))
 
 
 app.get('/', function (req, res) {
