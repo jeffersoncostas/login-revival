@@ -62,18 +62,18 @@
                 <!--formulario-->
                 <div ng-controller="formulario" class="ctrl-form">
 
-                    <form name="form1" novalidate ng-submit="update(user)">
+                    <form class="forml" name="form1" novalidate ng-submit="update(user)">
 
                         <div class="input-group">
 
-                            <input type="email" class="inputNew inputEmail" id="email1" name="email1" ng-model="user.email" required>
+                            <input type="email" class="inputNew inputEmail" id="emaill" name="email1" ng-model="user.email" required>
 
 
                             <div class="bar-input"></div>
 
                             <label>E-mail</label>
 
-                            <div class="error-content" ng-if="form1.email1.$touched && form1.email1.$invalid">
+                            <div class="error-content" ng-if="form1.email1.$touched && form1.email1.$invalid || form1.$submitted && form1.$error.required[0].$name== 'email1' ">
 
                                 <div class="error-message" ng-if="form1.email1.$error.required"> Campo obrigatório</div>
                                 <div class="error-message" ng-if="form1.email1.$error.email">E-mail inválido</div>
@@ -81,7 +81,7 @@
 
                             </div>
 
-                            <div class="valid-content" ng-if="form1.email1.$valid-email"> oi amore</div>
+                            <div class="valid-content" ng-if="form1.email1.$valid-email"></div>
 
                         </div>
 
@@ -97,13 +97,14 @@
                             <label>Senha</label>
 
 
-                            <div class="error-content" ng-if="form1.senha1.$touched && form1.senha1.$invalid">
+                            <div class="error-content" ng-if="form1.senha1.$touched && form1.senha1.$invalid  || form1.$submitted && form1.$error.required[1].$name== 'senha1' ">
 
                                 <div class="error-message" ng-if="form1.senha1.$error.required"> Campo obrigatório</div>
                                 <div class="error-message" ng-if="form1.senha1.$error.password">E-mail inválido</div>
 
 
                             </div>
+                            <div class="valid-content" ng-if="form1.senha1.$valid"></div>
 
                         </div>
                         <div class="checkbox-container">

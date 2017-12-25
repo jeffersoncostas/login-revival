@@ -94,6 +94,24 @@
 .inputNew.ng-invalid.ng-touched ~ .bar-input {
   background-color: red; }
 
+.inputNew.ng-valid-email.ng-touched.ng-valid-required ~ .bar-input {
+  background-color: #00ff0a; }
+
+.inputNew.ng-valid-email.ng-touched.ng-valid-required {
+  border-bottom: 2px solid #00ff0a; }
+
+.inputNew.ng-touched.ng-valid-required.ng-valid-parse ~ .bar-input {
+  background-color: #00ff0a; }
+
+.inputNew.ng-touched.ng-valid-required.ng-valid-parse {
+  border-bottom: 2px solid #00ff0a; }
+
+.forml.ng-invalid-required.ng-submitted .inputEmail.ng-invalid {
+  border-bottom: 2px solid red; }
+
+.forml.ng-invalid-required.ng-submitted .inputLogin.ng-invalid {
+  border-bottom: 2px solid red; }
+
 label {
   color: rgba(0, 105, 140, 0.82);
   font-size: 13px;
@@ -225,6 +243,17 @@ button {
   margin-left: 2%;
   color: white;
   padding: 10px; }
+
+.valid-content {
+  border-radius: 4px;
+  position: absolute;
+  right: 0;
+  top: 3px;
+  width: 12px;
+  height: 22px;
+  border: solid #00ff0a;
+  border-width: 0 5px 5px 0;
+  transform: rotate(45deg); }
 
 @keyframes error-mess {
   0% {
