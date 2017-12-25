@@ -268,7 +268,13 @@ footer {
   color: #b6edff;
   font-size: 13px;
   height: 90px;
-  width: 100%; }
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis; }
+
+.c-f-content span {
+  max-height: 200px; }
 
 .c-f-logo {
   width: 100%;

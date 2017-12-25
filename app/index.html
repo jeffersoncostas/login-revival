@@ -65,7 +65,10 @@
                     <form name="form1" novalidate ng-submit="update(user)">
 
                         <div class="input-group">
+
                             <input type="email" class="inputNew inputEmail" id="email1" name="email1" ng-model="user.email" required>
+
+
                             <div class="bar-input"></div>
 
                             <label>E-mail</label>
@@ -78,6 +81,7 @@
 
                             </div>
 
+                            <div class="valid-content" ng-if="form1.email1.$valid-email"> oi amore</div>
 
                         </div>
 
@@ -127,7 +131,7 @@
 
     </div>
 
-    <footer class="medium-bg-color">
+    <footer class="medium-bg-color" ng-controller="footerList">
         <div class="apontador-down">
             <img src="vector/seta.svg" alt="">
         </div>
@@ -137,6 +141,19 @@
             </div>
 
         </div>
+
+        <div ng-repeat="footer in footers">
+
+            <div class="colums-footer" ng-class="c-f-margin($last)">
+                <span class="c-f-title"> {{footer.title}} </span>
+                <div class="c-f-content"> <span> {{footer.content}}   </span></div>
+                <div class="button white-bg-color f-color-main">Lore ipsum</div>
+
+            </div>
+
+        </div>
+
+        <!--
         <div class="colums-footer">
             <span class="c-f-title">Lorem ipsum</span>
             <div class="c-f-content"> <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ex pulvinar velit porttitor ultricies eget id lorem. Pellentesque mattis lacus eu orci varius, vitae dapibus metus malesuada. Praesent sagittis eleifend nisi, vitae facilisis ex. Integer non sollicitudin ipsum. Proin semper enim nisi, id pharetra diam fermentum non. Nam blandit massa nec lobortis sollicitudin. Praesent pharetra sed urna ut sollicitudin. Nulla ut odio vel justo tempus suscipit. Duis interdum purus quam, quis suscipit velit congue vel.
@@ -159,6 +176,7 @@ Mauris ornare interdum ullamcorper. Phasellus et eros eget diam maximus venenati
             <div class="button white-bg-color f-color-main">Lore ipsum</div>
         </div>
 
+-->
 
 
     </footer>
