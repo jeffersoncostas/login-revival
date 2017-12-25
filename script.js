@@ -76,7 +76,6 @@ angular.module('myApp', [])
 
 
         $scope.update = function (user) {
-            console.log($scope.form1)
             if (!$scope.form1.$valid) {
                 return
             }

@@ -222,7 +222,15 @@ button {
   padding: 20px 0px;
   display: flex;
   justify-content: center;
-  border-radius: 3px; }
+  border-radius: 3px;
+  transition: 0.3s all; }
+
+.button:hover {
+  transform: scale(1.03, 1.03);
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.14); }
+
+.button:active {
+  transform: scale(0.97, 0.97); }
 
 .error-content {
   user-select: none;
@@ -386,6 +394,22 @@ footer {
     right: calc(100% + 240px); } }
 
 @media only screen and (max-width: 700px) {
+  .error-content {
+    right: 0%;
+    top: 110%;
+    width: 100%;
+    height: auto; }
+  .error-content > div {
+    width: 100%;
+    color: white;
+    padding: 2px; }
+  @keyframes error-mess {
+    0% {
+      top: 140%;
+      opacity: 0; }
+    100% {
+      top: 110%;
+      opacity: 1; } }
   .clouds-content {
     display: none; }
   .box-login {
