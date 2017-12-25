@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt" ng-app="myApp">
 
 <head>
     <meta charset="UTF-8">
     <title>Enterprise!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/angular.min.js"></script>
-
+    <script src="js/angular.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <meta name="theme-color" content="#42d0ff">
 
@@ -60,30 +59,66 @@
             <div class="box-login white-bg-color">
                 <div class="center-title box-title medium-font">Login</div>
 
-                <form action="">
+                <!--formulario-->
+                <div ng-controller="formulario" class="ctrl-form">
 
-                    <div class="input-group">
-                        <input type="email" class="inputNew">
-                        <div class="bar-input"></div>
+                    <form name="form1" novalidate ng-submit="update(user)">
 
-                        <label>E-mail</label>
-                    </div>
-                    <div class="input-group">
-                        <input type="password" class="inputNew">
+                        <div class="input-group">
+                            <input type="email" class="inputNew inputEmail" id="email1" name="email1" ng-model="user.email" required>
+                            <div class="bar-input"></div>
 
-                        <div class="bar-input"></div>
+                            <label>E-mail</label>
+
+                            <div class="error-content" ng-if="form1.email1.$touched && form1.email1.$invalid">
+
+                                <div class="error-message" ng-if="form1.email1.$error.required"> Campo obrigatório</div>
+                                <div class="error-message" ng-if="form1.email1.$error.email">E-mail inválido</div>
 
 
-                        <label>Senha</label>
-                    </div>
-                    <div class="checkbox-container">
+                            </div>
 
-                        <input type="checkbox" checked id="checkbox-always">
-                        <span class="checkmark"></span> <span id="a-conected">Mantenha-me conectado</span>
-                    </div>
 
-                </form>
-                <div class="button main-bg-color f-color-white">Entrar</div>
+                        </div>
+
+
+
+
+                        <div class="input-group">
+                            <input type="password" class="inputNew inputLogin" name="senha1" ng-model="user.password" name="password" required>
+
+                            <div class="bar-input"></div>
+
+
+                            <label>Senha</label>
+
+
+                            <div class="error-content" ng-if="form1.senha1.$touched && form1.senha1.$invalid">
+
+                                <div class="error-message" ng-if="form1.senha1.$error.required"> Campo obrigatório</div>
+                                <div class="error-message" ng-if="form1.senha1.$error.password">E-mail inválido</div>
+
+
+                            </div>
+
+                        </div>
+                        <div class="checkbox-container">
+
+                            <input type="checkbox" checked id="checkbox-always" ng-model="user.alwaysLogged">
+                            <span class="checkmark"></span> <span id="a-conected">Mantenha-me conectado</span>
+                        </div>
+                        <button type="submit" class="button main-bg-color f-color-white">Entrar</button>
+
+
+
+                    </form>
+
+
+
+
+                </div>
+
+
             </div>
 
         </section>

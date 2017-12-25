@@ -88,6 +88,12 @@
   border: none;
   border-bottom: 2px solid #42d0ff; }
 
+.inputNew.ng-invalid.ng-touched {
+  border-bottom: 2px solid red; }
+
+.inputNew.ng-invalid.ng-touched ~ .bar-input {
+  background-color: red; }
+
 label {
   color: rgba(0, 105, 140, 0.82);
   font-size: 13px;
@@ -99,7 +105,15 @@ label {
   transition: 0.2s ease all; }
 
 .inputNew:focus ~ label {
-  top: -20px;
+  top: -12px;
+  font-size: 15px;
+  color: #00698c; }
+
+.inputNew:focus {
+  background-color: rgba(0, 167, 255, 0.09); }
+
+.labelUp {
+  top: -12px;
   font-size: 15px;
   color: #00698c; }
 
@@ -142,7 +156,7 @@ label {
   opacity: 0;
   top: 0px;
   left: 0px;
-  z-index: 2;
+  z-index: 4;
   width: 15px;
   height: 15px; }
 
@@ -178,6 +192,9 @@ label {
   border-width: 0 2px 2px 0;
   transform: rotate(45deg); }
 
+button {
+  border: none; }
+
 .button {
   user-select: none;
   cursor: pointer;
@@ -188,6 +205,34 @@ label {
   display: flex;
   justify-content: center;
   border-radius: 3px; }
+
+.error-content {
+  user-select: none;
+  position: absolute;
+  font-size: 13px;
+  right: calc(-90% + 120px);
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 130px;
+  height: auto;
+  background-color: red;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.29);
+  animation-name: error-mess;
+  animation-duration: 0.5s; }
+
+.error-content > div {
+  width: 100%;
+  margin-left: 2%;
+  color: white;
+  padding: 10px; }
+
+@keyframes error-mess {
+  0% {
+    right: calc(-70% + 120px);
+    opacity: 0; }
+  100% {
+    right: calc(-90% + 120px);
+    opacity: 1; } }
 
 footer {
   font-family: arial;

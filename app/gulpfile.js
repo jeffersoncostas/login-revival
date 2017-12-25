@@ -6,7 +6,7 @@ let livereload = require('gulp-livereload');
 
 
 gulp.task('default', function () {
-    gulp.start(['sass', 'sass:watch', 'html']);
+    gulp.start(['sass', 'sass:watch', 'html', 'js']);
 })
 
 
@@ -26,8 +26,18 @@ gulp.task('html', function () {
 
 });
 
+gulp.task('js', function () {
+    return gulp.src('./js/*.js')
+        .pipe(gulp.dest(''))
+        .pipe(livereload());
+
+});
+
+
 gulp.task('sass:watch', function () {
     livereload.listen();
+    
+    gulp.watch('./js/*.js', ['js']);
     gulp.watch('index.html', ['html']);
     gulp.watch('./sass/**/*.sass', ['sass']);
 });

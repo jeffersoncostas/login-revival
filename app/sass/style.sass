@@ -25,7 +25,7 @@ $bold-font: 600
     margin: 0
     box-sizing: border-box
     outline: none
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0)
    
 
 .p-font
@@ -123,11 +123,17 @@ $bold-font: 600
     border: none
     border-bottom: 2px solid $main-color
 
+.inputNew.ng-invalid.ng-touched
+    border-bottom: 2px solid red
 
+.inputNew.ng-invalid.ng-touched ~ .bar-input
+    background-color: red
+
+    
 label
     color: rgba(0, 105, 140, 0.82)
     font-size: $small-font-size
-    font-weight: normal;
+    font-weight: normal
     position: absolute
     pointer-events: none
     left: 5px
@@ -135,10 +141,20 @@ label
     transition: 0.2s ease all
     
 .inputNew:focus ~ label
-    top: -20px
+    top: -12px
     font-size: 15px
     color: $darker-color
+    
+.inputNew:focus
+    background-color: rgba(0, 167, 255, 0.09)
 
+    
+.labelUp
+    top: -12px
+    font-size: 15px
+    color: $darker-color 
+    
+    
 .bar-input1
     width: 100%
     display: flex
@@ -147,9 +163,9 @@ label
 .bar-input
     height: 2px
     width: 0px
-    bottom: 1px; 
+    bottom: 1px 
     transform: scale(1,1)
-    position: absolute;
+    position: absolute
     background-color: $darker-color
     transition: 0.2s ease all
     
@@ -181,14 +197,13 @@ label
     opacity: 0
     top: 0px
     left: 0px
-    z-index: 2
+    z-index: 4
     width: 15px
     height: 15px
 
 
 .checkmark 
     border-radius: 3px
-
     position: absolute
     top: 0
     left: 0
@@ -228,6 +243,9 @@ label
 
 // button-login
 
+button 
+    border: none
+    
 
 .button
     user-select: none
@@ -240,6 +258,43 @@ label
     justify-content: center
     border-radius: 3px
 
+//
+
+
+
+//Error
+
+.error-content
+    user-select: none
+    position: absolute
+    font-size: $small-font-size
+    right: calc(-90% + 120px)
+    top: 50%
+    transform: translate(0, -50%)
+    width: 130px
+    height: auto
+    background-color: red
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.29)
+    
+    animation-name: error-mess
+    animation-duration: 0.5s
+    
+
+.error-content > div
+    width: 100%
+    margin-left: 2%
+    color: white
+    padding: 10px
+    
+    
+@keyframes error-mess
+    0%
+        right: calc(-70% + 120px)
+        opacity: 0
+    
+    100%
+        right: calc(-90% + 120px)
+        opacity: 1
 
 // footer
 footer
@@ -383,7 +438,7 @@ footer
         display: block
         position: relative
         padding: 0px 20px 20px
-        height: auto;
+        height: auto
        
     c-f-margin-m
         margin-top: 10px
