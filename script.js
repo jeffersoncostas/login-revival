@@ -65,6 +65,46 @@ function subirLabel(label, input) {
 
 }
 
+function entrarLoading() {
+    function display() {
+        boxLogin.style.display = "none"
+        abrirLoading()
+    }
+    let boxLogin = document.querySelector(".box-login")
+    boxLogin.classList.remove("boxAnim")
+    boxLogin.classList.add("boxNone")
+
+    setTimeout(display, 500)
+
+
+
+}
+
+function abrirLoading() {
+
+
+    let loading = document.querySelector(".loading")
+    let loadingSpan = document.querySelector(".l-span")
+
+    loading.classList.add("anim-loading")
+
+    setTimeout(display, 1600)
+
+    function display() {
+        loadingSpan.classList.add("anim-loading-2")
+
+        setTimeout(display2, 1200)
+
+
+    }
+
+    function display2() {
+        loading.classList.remove("anim-loading")
+        loading.classList.add("anim-loading-3")
+
+
+    }
+}
 
 
 // form -
@@ -78,12 +118,14 @@ angular.module('myApp', [])
         $scope.update = function (user) {
             if (!$scope.form1.$valid) {
                 return
+            } else {
+                $scope.master = angular.copy(user);
+
+                entrarLoading()
+                console.log($scope.master)
             }
 
 
-            $scope.master = angular.copy(user);
-
-            console.log($scope.master)
         };
 
 

@@ -52,7 +52,8 @@
 
 .login-part {
   align-self: center;
-  z-index: 4; }
+  z-index: 4;
+  transition: 0.5s all; }
 
 .center-title {
   display: flex;
@@ -61,7 +62,8 @@
 .title-login {
   color: #00698c;
   font-weight: 600;
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  transition: 0.5s all; }
 
 .title-login span {
   color: #b6edff; }
@@ -72,6 +74,34 @@
   padding: 23px 20px;
   width: 340px;
   height: 300px; }
+
+.boxAnim {
+  animation-duration: 0.7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-name: appear; }
+
+.boxNone {
+  animation-duration: 0.7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-name: desappear; }
+
+@keyframes appear {
+  0% {
+    transform: scale(0.95, 0.95);
+    opacity: 0; }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1; } }
+
+@keyframes desappear {
+  100% {
+    transform: scale(0.95, 0.95);
+    opacity: 0; }
+  0% {
+    transform: scale(1, 1);
+    opacity: 1; } }
 
 .box-title {
   font-weight: 600;
@@ -395,6 +425,96 @@ footer {
 
 .apontador-down {
   display: none; }
+
+.loading-1 {
+  transition: 0.7s all;
+  align-self: center;
+  z-index: 10;
+  position: relative;
+  animation-duration: 0.6s;
+  animation-name: loading1;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease; }
+
+.circle-l1 {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 20px solid rgba(65, 65, 65, 0.65); }
+
+.circle-l2 {
+  align-self: center;
+  position: absolute;
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  border: 10px solid #35a6cc;
+  animation-duration: 1s;
+  animation-name: loading1;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease; }
+
+.loading {
+  display: none;
+  width: 400px;
+  position: relative;
+  height: 90px; }
+
+.l-span {
+  opacity: 0;
+  font-weight: 600;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  color: white;
+  font-size: 24px; }
+
+.anim-loading {
+  display: block;
+  animation-duration: 0.7s;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-name: appear; }
+
+.anim-loading-2 {
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-name: appear-2; }
+
+.anim-loading-3 {
+  display: block;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-name: desappear-2; }
+
+@keyframes appear-2 {
+  0% {
+    transform: scale(0.95, 0.95), translate(-50%, 0%);
+    opacity: 0; }
+  100% {
+    transform: scale(1, 1), translate(-50%, 0%);
+    opacity: 1; } }
+
+@keyframes desappear-2 {
+  100% {
+    transform: scale(1.2, 1.2);
+    opacity: 0; }
+  0% {
+    transform: scale(1, 1);
+    opacity: 1; } }
+
+@keyframes loading1 {
+  0% {
+    transform: scale(1, 1); }
+  50% {
+    transform: scale(0.93, 0.93); }
+  100% {
+    transform: scale(1, 1); } }
 
 @media only screen and (max-width: 700px) {
   .error-content {
